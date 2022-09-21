@@ -4,7 +4,7 @@ using namespace std;
 
 bool LinkedList ::isEmpty()
 {
-    node *temp = head; // temp node pointing head for traverse
+    node *temp = head; 
     if (temp == NULL)
     {
         cout << "True: List is Empty \n";
@@ -29,21 +29,21 @@ void LinkedList ::addTotail(int data)
 {
     node *Newnode = new node;
     Newnode->data = data;
-    Newnode->next = NULL; // new node to tail
-    node *temp = head;    // temp node to head
-    // For Empty Linked List
+    Newnode->next = NULL; 
+    node *temp = head;    
+    
     if (head == NULL)
     {
         head = Newnode;
     }
-    // For Non Empty Linked List
+
     else
     {
         while (temp->next != NULL)
-        {                      // traversal to end of linked list
-            temp = temp->next; // temp to the next node
+        {                      
+            temp = temp->next; 
         }
-        temp->next = Newnode; // new node to the next of last node
+        temp->next = Newnode; 
     }
 }
 
@@ -51,7 +51,7 @@ void LinkedList ::add(int data, node *predecessor)
 {
     node *Newnode = new node;
     Newnode->data = data;
-    node *temp = head; // temp nodde to head
+    node *temp = head; 
     if (temp == NULL)
     {
         cout << "Error Previous node can't be NULL \n";
@@ -74,9 +74,9 @@ void LinkedList ::add(int data, node *predecessor)
 
 void LinkedList ::removeFromhead()
 {
-    node *temp = head; // temp node to head
-    head = head->next; // head pointing to second node
-    delete temp;       // deleting first node
+    node *temp = head; 
+    head = head->next; 
+    delete temp;       
 }
 
 void LinkedList ::remove(int data)
@@ -90,7 +90,7 @@ void LinkedList ::remove(int data)
         delete Previousnode;
     }
 
-    node *temp = head; // temp node to head
+    node *temp = head; 
     if (temp->next != NULL)
     {
         while (temp->next != NULL)
@@ -168,13 +168,13 @@ bool LinkedList ::search(int data)
 
 void LinkedList ::traverse()
 {
-    node *temp = head; // temp node pointing to head for traversal
+    node *temp = head; 
     if (temp != NULL)
     {
         cout << "Your Linked List contains: ";
         while (temp != NULL)
-        {                              // loop until NULL point
-            cout << temp->data << " "; // print node data
+        {                              
+            cout << temp->data << " "; 
             temp = temp->next;
         }
         cout << endl
